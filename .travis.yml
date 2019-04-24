@@ -1,0 +1,14 @@
+sudo: false
+dist: 'trusty'
+
+language: node_js
+node_js:
+  - "7"
+
+cache:
+  directories:
+    - $HOME/.npm
+    - node_modules
+
+install:
+  - npm install
