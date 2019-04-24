@@ -5,12 +5,8 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-<<<<<<< HEAD
     "react-router-dom": "^5.0.0",
     "react-scripts": "1.1.4"
-=======
-    "react-scripts": "2.1.8"
->>>>>>> d3ef3e4... Making React components
   },
   "scripts": {
     "start": "react-scripts start",
