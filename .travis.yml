@@ -3,7 +3,7 @@ dist: 'trusty'
 
 language: node_js
 node_js:
-  - "7"
+  - "stable"
 
 cache:
   directories:
@@ -12,3 +12,7 @@ cache:
 
 install:
   - npm install
+  - cd client && npm install && cd ..
+
+script:
+  - npm run test
