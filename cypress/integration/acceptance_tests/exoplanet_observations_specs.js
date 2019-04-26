@@ -1,7 +1,7 @@
 describe("Exoplanet Observations", function() {
   beforeEach(() => {
     // Given a user visits exoplanet observations site
-    cy.visit("https://localhost:3000");
+    cy.visit("http://localhost:3000");
   });
 
   xit("Add transit observation data", function() {

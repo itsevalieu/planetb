@@ -1,7 +1,7 @@
 describe("Exoplanet Transit Graphs", function() {
   beforeEach(() => {
     // Given a user visits exoplanet transit graph site
-    cy.visit("https://localhost:3000");
+    cy.visit("http://localhost:3000");
   });
 
   xit("Deactivate active transit period calculation", function() {
