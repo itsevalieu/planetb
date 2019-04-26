@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Async from 'react-promise';
 import ExoplanetItem from './ExoplanetItem';
+import Header from '../components/Header';
 
 const {
   Stitch,
@@ -36,18 +37,6 @@ const Head = styled.th`
   padding: 10px;
 `;
 
-const Header = (props) => {
-  const style = {
-    fontSize: '3em',
-    width: '100%',
-    textAlign: 'center',
-    padding: '1em',
-    color: '#fff',
-    textShadow: '2px 2px 2px #333'
-  }
-  return <header style={style}>{props.children}</header>;
-}
-
 class ExoplanetList extends Component {
   getExoplanets(){
     return new Promise(function(resolve, reject){
@@ -67,7 +56,7 @@ class ExoplanetList extends Component {
   render() {
     return (
       <Wrapper>
-        <Header>Exoplanet Database</Header>
+        <Header>Exoplanet List</Header>
         <Table>
           <TableHead>
             <Row>

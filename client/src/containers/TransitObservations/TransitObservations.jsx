@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 
 class TransitObservations extends Component {
   render() {
     return (
       <div>
-        Transit Observations
+        <Header>Transit Observations</Header>
       </div>
     );
   }

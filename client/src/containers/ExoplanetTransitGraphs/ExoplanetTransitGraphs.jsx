@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 
 class ExoplanetTransitGraph extends Component {
   render() {
     return (
       <div>
-        Exoplanet Transit Graph
+        <Header>Exoplanet Transit Graphs</Header>
       </div>
     );
   }
