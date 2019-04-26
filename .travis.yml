@@ -1,0 +1,18 @@
+sudo: false
+dist: 'trusty'
+
+language: node_js
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - $HOME/.npm
+    - node_modules
+
+install:
+  - npm install
+  - cd client && npm install && cd ..
+
+script:
+  - npm run test
