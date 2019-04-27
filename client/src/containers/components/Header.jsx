@@ -7,13 +7,17 @@ const StyledHeader = styled.header`
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    .wrap {
+        padding: 1em 50px;
+    }
 `;
 const Title = styled.h1`
     text-shadow: 2px 2px 2px #333
     font-size: 3em;
     color: #fff;
+    text-align: center;
 `;
 const Link = styled.a`
     color: #fff;
@@ -22,14 +26,27 @@ const Link = styled.a`
 const Header = (props) => {
     let style = {
         width: '80px',
-        height: '70px'
+        height: '70px',
+        marginRight: '70px'
     }
     if (props.children === 'Exoplanet List') {
-        return <StyledHeader><Link href='/'><img src={logo} alt='logo' style={style}/></Link><Title>{props.children}</Title><Link href='/'><Button>Login</Button></Link></StyledHeader>;
+        return <StyledHeader>
+            <div className='wrap'><Link href='/'><img src={logo} alt='logo' style={style}/></Link></div>
+            <div className='wrap'><Title>{props.children}</Title></div>
+            <div className='wrap'><Link href='/'><Button>Login</Button></Link></div>
+        </StyledHeader>;
     } else if (props.children === 'Exoplanet Transit Graphs') {
-        return <StyledHeader><Link href='/'><img src={logo} alt='logo' style={style}/></Link><Title>{props.children}</Title><Link href='/exoplanet/transit'><Button>Transit Observations</Button></Link></StyledHeader>;    
+        return <StyledHeader>
+            <div className='wrap'><Link href='/'><img src={logo} alt='logo' style={style}/></Link></div>
+            <div className='wrap'><Title>{props.children}</Title></div>
+            <div className='wrap'><Link href='/exoplanet/transit'><Button>Transits</Button></Link></div>
+        </StyledHeader>;   
     } else if (props.children === 'Transit Observations') {
-        return <StyledHeader><Link href='/'><img src={logo} alt='logo' style={style}/></Link><Title>{props.children}</Title><Link href='/exoplanet'><Button>Exoplanet Graphs</Button></Link></StyledHeader>;
+        return <StyledHeader>
+            <div className='wrap'><Link href='/'><img src={logo} alt='logo' style={style}/></Link></div>
+            <div className='wrap'><Title>{props.children}</Title></div>
+            <div className='wrap'><Link href='/exoplanet'><Button>Graphs</Button></Link></div>
+        </StyledHeader>;  
     } else {
         return null;
     }
