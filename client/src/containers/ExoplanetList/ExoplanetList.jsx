@@ -20,21 +20,22 @@ const Wrapper = styled.div`
 `;
 const Table = styled.table`
   margin: 0 50px;
-  padding: 50px;
+  padding: 0 50px 25px;
   box-shadow: 2px 2px 5px #333;
   background: #fff;
+  border-spacing: 0;
 `;
 const TableHead = styled.thead`
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.8em;
 `;
 const TableBody = styled.tbody`
 `;
 const Row = styled.tr`
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 `;
 const Head = styled.th`
-  padding: 10px;
+  padding: 25px 0;
 `;
 
 class ExoplanetList extends Component {
@@ -70,7 +71,7 @@ class ExoplanetList extends Component {
           </TableHead>
           <TableBody>
             <Async promise={this.getExoplanets()} then={val => val.map(function(d, idx){
-              return (<ExoplanetItem key={idx} index={idx} data={d}/>);
+              return (<ExoplanetItem key={idx} index={idx} data={d} />);
             })}/>
           </TableBody>
         </Table>
