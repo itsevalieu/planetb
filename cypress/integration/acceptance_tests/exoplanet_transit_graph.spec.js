@@ -1,30 +1,30 @@
 describe("Exoplanet Transit Graphs", function() {
   beforeEach(() => {
     // Given a user visits exoplanet transit graph site
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/5cc50b981a320ef75edeb18f/transit");
   });
 
   xit("Deactivate active transit period calculation", function() {
     // When they click on an active transit
-    cy.contains("type").click();
+    // action
 
     // Then, the transit is removed from calculation period
-    cy.url().should("include", "");
+    // result
   });
   xit("Add transit period calculation", function() {
     // When they click on a deactived transit
-    cy.contains("type").click();
+    // action
 
     // Then, the transit is added to the transit period calculation
-    cy.url().should("include", "");
+    // result
   });
   xit("Deactivate active transit period calculation", function() {
     // Given a single exoplanet view
 
     // When they click on the observation button
-    cy.contains("type").click();
+    // action
 
     // Then, all the observations are visible
-    cy.url().should("include", "");
+    // result
   });
 });
