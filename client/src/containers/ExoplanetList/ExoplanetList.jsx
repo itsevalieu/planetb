@@ -32,16 +32,22 @@ const Head = styled.th`
 
 class ExoplanetList extends Component {
   getExoplanets(){
-    const {
+    let {
       Stitch,
       RemoteMongoClient,
       AnonymousCredential
     } = require('mongodb-stitch-browser-sdk');
-    const client = Stitch.initializeDefaultAppClient('planetb-kopdp');
-    const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('planetb');
+    let client;
+    if (Stitch.hasAppClient('planetb-kopdp')){
+      client = Stitch.getAppClient('planetb-kopdp');
+    }
+    else {
+      client = Stitch.initializeDefaultAppClient('planetb-kopdp');
+    }
+    let db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('planetb');
     return new Promise(function(resolve, reject){
         client.auth.loginWithCredential(new AnonymousCredential()).then(() =>
-        db.collection('exoplanets').find({}, { limit: 10}).asArray()
+        db.collection('exoplanets').find({}, { limit: 20 }).asArray()
       ).then(docs => {
         console.log(docs);
         console.log("[MongoDB Stitch] Connected to Stitch");

@@ -15,6 +15,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: url('./stardust.png');
 }
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
