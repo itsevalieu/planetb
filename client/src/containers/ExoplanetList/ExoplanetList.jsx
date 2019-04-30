@@ -54,6 +54,7 @@ class ExoplanetList extends Component {
   }
   handleClick = (e) => {
     console.log(e.currentTarget.dataset.uuid);
+    this.props.history.push(`/observations/${e.currentTarget.dataset.uuid}`);
   }
   render() {
     return (
