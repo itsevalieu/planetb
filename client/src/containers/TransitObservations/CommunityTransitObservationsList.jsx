@@ -26,11 +26,13 @@ const Head = styled.th`
 
 class CommunityTransitObservationsList extends Component {
   getTransits(){
+
     let {
       Stitch,
       RemoteMongoClient,
       AnonymousCredential
     } = require('mongodb-stitch-browser-sdk');
+
     let client;
     if (Stitch.hasAppClient('planetb-kopdp')){
       client = Stitch.getAppClient('planetb-kopdp');
@@ -39,6 +41,7 @@ class CommunityTransitObservationsList extends Component {
       client = Stitch.initializeDefaultAppClient('planetb-kopdp');
     }
     let db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('planetb');
+
 
     return new Promise(function(resolve, reject){
         client.auth.loginWithCredential(new AnonymousCredential()).then(() =>
