@@ -15,8 +15,8 @@ class App extends Component {
       <div>
         <Router>
           <Route exact path='/' component={ ExoplanetList } />
-          <Route exact path='/exoplanet' component={ ExoplanetTransitGraphs } />
-          <Route exact path='/exoplanet/transit' component={ TransitObservations } />
+          <Route exact path='/transits' component={ ExoplanetTransitGraphs } />
+          <Route exact path='/observations' component={ TransitObservations } />
         </Router>
       </div>
     );
