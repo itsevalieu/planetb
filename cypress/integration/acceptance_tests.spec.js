@@ -6,10 +6,12 @@ describe("Exoplanet List", function() {
   it("View exoplanet transit graphs", function() {
     cy.get("div")
       .contains("CoRoT-10 b")
-      .click();
+      .wait(2000)
+      .click()
   
     // Should be on a new URL which includes 'exoplanet-transit-graphs'
-    cy.url().should("include", "observations/5cc50b981a320ef75edeb18f"); //temporary spec
+    cy.url().should("include", "observations/5cc50b981a320ef75edeb18f") //temporary spec
+      .wait(2000)
     // real spec
     // cy.url().should("include", "transits/5cc50b981a320ef75edeb18f");
     // cy.get("p").contains("O-C");
