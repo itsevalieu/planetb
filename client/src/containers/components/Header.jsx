@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import logo from './planetb.png';
 
 const StyledHeader = styled.header`
@@ -19,7 +20,7 @@ const Title = styled.h1`
     color: #fff;
     text-align: center;
 `;
-const Link = styled.a`
+const StyledLink = styled(Link)`
     color: #fff;
 `;
 
@@ -31,21 +32,21 @@ const Header = (props) => {
     }
     if (props.children === 'Exoplanet List') {
         return <StyledHeader>
-            <div className='wrap'><Link href='/'><img src={logo} alt='logo' style={style}/></Link></div>
+            <div className='wrap'><StyledLink to='/'><img src={logo} alt='logo' style={style}/></StyledLink></div>
             <div className='wrap'><Title>{props.children}</Title></div>
-            <div className='wrap'><Link href='/'><Button>Login</Button></Link></div>
+            <div className='wrap'><StyledLink to='/'><Button>Login</Button></StyledLink></div>
         </StyledHeader>;
     } else if (props.children === 'Exoplanet Transit Graphs') {
         return <StyledHeader>
-            <div className='wrap'><Link href='/'><img src={logo} alt='logo' style={style}/></Link></div>
+            <div className='wrap'><StyledLink to='/'><img src={logo} alt='logo' style={style}/></StyledLink></div>
             <div className='wrap'><Title>{props.children}</Title></div>
-            <div className='wrap'><Link href='/exoplanet/transit'><Button>Transits</Button></Link></div>
+            <div className='wrap'><StyledLink to='/observations/5cc50b981a320ef75edeb18f'><Button>Observations</Button></StyledLink></div>
         </StyledHeader>;   
     } else if (props.children === 'Transit Observations') {
         return <StyledHeader>
-            <div className='wrap'><Link href='/'><img src={logo} alt='logo' style={style}/></Link></div>
+            <div className='wrap'><StyledLink to='/'><img src={logo} alt='logo' style={style}/></StyledLink></div>
             <div className='wrap'><Title>{props.children}</Title></div>
-            <div className='wrap'><Link href='/exoplanet'><Button>Graphs</Button></Link></div>
+            <div className='wrap'><StyledLink to='/transits/5cc50b981a320ef75edeb18f'><Button>Graphs</Button></StyledLink></div>
         </StyledHeader>;  
     } else {
         return null;
