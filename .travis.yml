@@ -9,10 +9,12 @@ cache:
   directories:
     - $HOME/.npm
     - node_modules
+    - ~/.cache
 
 install:
-  - npm install
-  - cd client && npm install && cd ..
+  - npm i
+  - cd client && npm i && cd ..
 
 script:
-  - npm run test
+  - npm run client
+  - npm run cy
