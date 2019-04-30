@@ -4,14 +4,6 @@ import Async from 'react-promise';
 import ExoplanetItem from './ExoplanetItem';
 import Header from '../components/Header';
 
-const {
-  Stitch,
-  RemoteMongoClient,
-  AnonymousCredential
-} = require('mongodb-stitch-browser-sdk');
-const client = Stitch.initializeDefaultAppClient('planetb-kopdp');
-const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('planetb');
-
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -20,25 +12,33 @@ const Wrapper = styled.div`
 `;
 const Table = styled.table`
   margin: 0 50px;
-  padding: 50px;
+  padding: 0 50px 25px;
   box-shadow: 2px 2px 5px #333;
   background: #fff;
+  border-spacing: 0;
 `;
 const TableHead = styled.thead`
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.8em;
 `;
 const TableBody = styled.tbody`
 `;
 const Row = styled.tr`
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 `;
 const Head = styled.th`
-  padding: 10px;
+  padding: 25px 0;
 `;
 
 class ExoplanetList extends Component {
   getExoplanets(){
+    const {
+      Stitch,
+      RemoteMongoClient,
+      AnonymousCredential
+    } = require('mongodb-stitch-browser-sdk');
+    const client = Stitch.initializeDefaultAppClient('planetb-kopdp');
+    const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('planetb');
     return new Promise(function(resolve, reject){
         client.auth.loginWithCredential(new AnonymousCredential()).then(() =>
         db.collection('exoplanets').find({}, { limit: 10}).asArray()
@@ -52,7 +52,9 @@ class ExoplanetList extends Component {
       });
     });
   }
-
+  handleClick = (e) => {
+    console.log(e.currentTarget.dataset.uuid);
+  }
   render() {
     return (
       <Wrapper>
@@ -69,9 +71,9 @@ class ExoplanetList extends Component {
             </Row>
           </TableHead>
           <TableBody>
-            <Async promise={this.getExoplanets()} then={val => val.map(function(d, idx){
-              return (<ExoplanetItem key={idx} index={idx} data={d}/>);
-            })}/>
+            <Async promise={this.getExoplanets()} then={val => val.map((d, idx) => {
+              return <ExoplanetItem key={idx} index={idx} data={d} handleClick={this.handleClick}/>
+            }, this)}/>
           </TableBody>
         </Table>
       </Wrapper>
