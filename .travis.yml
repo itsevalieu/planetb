@@ -12,8 +12,7 @@ cache:
     - ~/.cache
 
 install:
-  - npm i
-  - cd client && npm i && cd ..
+  - npm run setup
 
 script:
   - npm run client
