@@ -37,12 +37,12 @@ Push new feature branch to origin:
 git push origin issue42-add-logarithms
 ```
 
-If you already have an in-progress feature branch in origin and your `dev` branch becomes out of date, fetch and rebase your working branch off `origin/dev`, then force push:
+If you already have an in-progress feature branch in origin and your `dev` branch becomes out of date, fetch and rebase your working branch off `origin/dev`, then force push with lease:
 
 ```
 git fetch origin
 git rebase origin/dev
-git push origin issue42-add-logarithms --force
+git push origin issue42-add-logarithms --force-with-lease
 ```
 
 ## Submitting a pull request (PR)
