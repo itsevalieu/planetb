@@ -1,0 +1,51 @@
+[[planet-b]]
+Planet B
+--------
+
+https://opensource.org/licenses/MIT[image:https://img.shields.io/badge/License-MIT-yellow.svg[License:
+MIT]]
+https://travis-ci.org/itsevalieu/planetb[image:https://travis-ci.org/itsevalieu/planetb.svg[Build
+Status]]
+https://coveralls.io/github/itsevalieu/planetb[image:https://coveralls.io/repos/github/itsevalieu/planetb/badge.svg[Coverage
+Status]]
+http://makeapullrequest.com[image:https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square[PRs
+Welcome]]
+
+A serverless, scalable, user-friendly database for exoplanet transit
+data.
+
+[[installation-and-setup]]
+Installation and setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+Clone repository:
+
+....
+git clone https://github.com/itsevalieu/planetb
+....
+
+Install server and client npm packages:
+
+....
+npm run setup
+....
+
+[[usage]]
+Usage
+~~~~~
+
+Run client on local host:
+
+....
+npm run client
+....
+
+Open a web browser and visit http://localhost:3000.
+
+[[contributing]]
+Contributing
+~~~~~~~~~~~~
+
+We encourage you to contribute to Planet B! Please check out the
+link:./CONTRIBUTING.adoc[CONTRIBUTING] guide for guidelines about how to
+proceed.
